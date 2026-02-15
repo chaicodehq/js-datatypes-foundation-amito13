@@ -48,19 +48,38 @@
  *   areAllConfirmed(passengers)          // => true/false
  */
 export function findPassenger(passengers, name) {
-  // Your code here
+
+        if(!Array.isArray(passengers)) return undefined
+        if(typeof name !=="string") return undefined
+         return passengers.find(name)
 }
 
+
 export function getPassengerIndex(passengers, name) {
-  // Your code here
+
+      if(!Array.isArray(passengers)) return -1
+        if(typeof name !=="string") return -1
+
+        return passengers.findIndex(name)
 }
 
 export function isAnyWaitlisted(passengers) {
-  // Your code here
+
+     if(!Array.isArray(passengers)) return false
+     if(passengers.length===0) return false
+
+      return passengers.some(status: "waitlisted")
 }
 
 export function areAllConfirmed(passengers) {
-  // Your code here
+//       4. areAllConfirmed(passengers)
+//  *      - .every() se check karo ki SAB passengers "confirmed" hain ya nahi
+//  *      - Agar passengers array nahi hai ya empty hai, return false
+//  *      - Example: areAllConfirmed([{status:"confirmed"}, {status:"confirmed"}]) => true
+//  *
+    if(!Array.isArray(passengers)) return false
+     if(passengers.length===0) return false
+    
 }
 
 export function getWaitlistedPassengers(passengers) {

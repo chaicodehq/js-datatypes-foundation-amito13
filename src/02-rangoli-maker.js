@@ -5,10 +5,10 @@
  * String transform methods use karke patterns banana hai.
  * Tu Priya ki madad kar!
  *
- * Methods to explore: .slice(), .split(), .join(), .replace(),
- *   .replaceAll(), .repeat()
+
  *
- * Functions:
+ * Functions: * Methods to explore: .slice(), .split(), .join(), .replace(),
+ *   .replaceAll(), .repeat()
  *
  *   1. repeatPattern(pattern, times)
  *      - .repeat(times) use karke pattern ko repeat karo
@@ -46,21 +46,41 @@
  *   splitAndJoinRangoli("red,blue", ",", "-")  // => "red-blue"
  */
 export function repeatPattern(pattern, times) {
-  // Your code here
+  
+    if(typeof pattern !== "string") return ""
+    if( typeof times !== "number" || !Number.isInteger(times) ||  times <= 0) return ""
+
+    return pattern.repeat(times)
 }
 
 export function extractRangoliCenter(design, start, end) {
-  // Your code here
+  if(typeof design != "string") return ""
+ if(typeof start !="number" || typeof end !="number") return ""
+  
+  return design.slice(start,end)
 }
 
 export function splitAndJoinRangoli(colorString, oldSep, newSep) {
-  // Your code here
+  if (
+    typeof colorString !== "string" ||
+    typeof oldSep !== "string" ||
+    typeof newSep !== "string"
+  ) {
+    return "";
+  }
+
+  return colorString.split(oldSep).join(newSep);
 }
 
 export function replaceRangoliColor(design, oldColor, newColor) {
-  // Your code here
+  if(typeof design !== "string" || typeof oldColor !== "string" || typeof newColor !== "string") return ""
+  let after_repalce = design.replaceAll(oldColor,newColor)
+  return after_repalce
 }
 
 export function makeRangoliBorder(char, length) {
-  // Your code here
+  if(typeof char != "string") return ""
+  if(typeof length !== "number" || length <= 0 || !Number.isInteger(length) )return ""
+  
+  return char.repeat(length).slice(0, length);
 }
